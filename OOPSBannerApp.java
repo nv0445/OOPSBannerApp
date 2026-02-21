@@ -1,4 +1,16 @@
 public class OOPSBannerApp {
+<<<<<<< HEAD
+   public static void main(String[] args)
+{
+     System.out.println(" 00000  00000  PPPPP  SSSSS ");
+     System.out.println(" 0   00   0   P   P S       ");
+     System.out.println(" 0   00   0    ppppp  SSSSS ");
+     System.out.println(" 0   00   0    P          S ");
+     System.out.println(" 00000  00000  P      SSSSS ");
+     }
+}
+  
+=======
 
     public static void main(String[] args) {
 
@@ -17,3 +29,4 @@ public class OOPSBannerApp {
         }
     }
 }
+>>>>>>> 900bdedf87401d390f758878f16aa5ff834bbfa1
