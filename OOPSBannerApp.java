@@ -2,16 +2,53 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Store banner lines in an array
+        // Store all banner lines in an array
         String[] banner = {
-                " OOOOO   OOOOO   PPPPP   SSSSS ",
-                "O     O O     O  P    P S      ",
-                "O     O O     O  PPPPP   SSSSS ",
-                "O     O O     O  P            S",
-                " OOOOO   OOOOO   P       SSSSS "
+
+                String.join(" ",
+                        " *****  ",
+                        " *****  ",
+                        " *****  ",
+                        " *****  "),
+
+                String.join(" ",
+                        "*     * ",
+                        "*     * ",
+                        "*     * ",
+                        "*     * "),
+
+                String.join(" ",
+                        "*     * ",
+                        "*     * ",
+                        "*     * ",
+                        "*      "),
+
+                String.join(" ",
+                        "*     * ",
+                        "*     * ",
+                        " *****  ",
+                        " *****  "),
+
+                String.join(" ",
+                        "*     * ",
+                        "*     * ",
+                        "*       ",
+                        "      * "),
+
+                String.join(" ",
+                        "*     * ",
+                        "*     * ",
+                        "*       ",
+                        "      * "),
+
+                String.join(" ",
+                        " *****  ",
+                        " *****  ",
+                        "*       ",
+                        " *****  ")
         };
 
-        // Print using loop
+        // Print banner using enhanced for-loop
         for (String line : banner) {
             System.out.println(line);
         }
