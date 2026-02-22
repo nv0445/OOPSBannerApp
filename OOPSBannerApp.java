@@ -1,32 +1,46 @@
-public class OOPSBannerApp {
-<<<<<<< HEAD
-   public static void main(String[] args)
-{
-     System.out.println(" 00000  00000  PPPPP  SSSSS ");
-     System.out.println(" 0   00   0   P   P S       ");
-     System.out.println(" 0   00   0    ppppp  SSSSS ");
-     System.out.println(" 0   00   0    P          S ");
-     System.out.println(" 00000  00000  P      SSSSS ");
-     }
-}
-  
-=======
+public class OOPSBannerApp{
+   public static void main(String[] args) {
 
-    public static void main(String[] args) {
+        System.out.println(String.join(" ",
+                " *****  ",
+                " *****  ",
+                " *****  ",
+                " *****  "));
 
-        // Store banner lines in an array
-        String[] banner = {
-                " OOOOO   OOOOO   PPPPP   SSSSS ",
-                "O     O O     O  P    P S      ",
-                "O     O O     O  PPPPP   SSSSS ",
-                "O     O O     O  P            S",
-                " OOOOO   OOOOO   P       SSSSS "
-        };
+        System.out.println(String.join(" ",
+                "*     * ",
+                "*     * ",
+                "*     * ",
+                "*     * "));
 
-        // Print using loop
-        for (String line : banner) {
-            System.out.println(line);
-        }
+        System.out.println(String.join(" ",
+                "*     * ",
+                "*     * ",
+                "*     * ",
+                "*      "));
+
+        System.out.println(String.join(" ",
+                "*     * ",
+                "*     * ",
+                " *****  ",
+                " *****  "));
+
+        System.out.println(String.join(" ",
+                "*     * ",
+                "*     * ",
+                "*       ",
+                "      * "));
+
+        System.out.println(String.join(" ",
+                "*     * ",
+                "*     * ",
+                "*       ",
+                "      * "));
+
+        System.out.println(String.join(" ",
+                " *****  ",
+                " *****  ",
+                "*       ",
+                " *****  "));
     }
 }
->>>>>>> 900bdedf87401d390f758878f16aa5ff834bbfa1
