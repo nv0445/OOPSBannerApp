@@ -1,58 +1,49 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class BannerApp {
 
-    private static final Map<Character, CharacterPattern> map = new HashMap<>();
+    private static final Map<Character, String[]> patterns = new HashMap<>();
 
     static {
-        map.put('O', new CharacterPattern(new String[]{
+        patterns.put('O', new String[]{
                 " *** ",
                 "*   *",
                 "*   *",
                 "*   *",
                 " *** "
-        }));
+        });
 
-        map.put('P', new CharacterPattern(new String[]{
+        patterns.put('P', new String[]{
                 "**** ",
                 "*   *",
                 "**** ",
                 "*    ",
                 "*    "
-        }));
+        });
 
-        map.put('S', new CharacterPattern(new String[]{
+        patterns.put('S', new String[]{
                 " ****",
                 "*    ",
                 " *** ",
                 "    *",
                 "**** "
-        }));
+        });
     }
 
     public static void main(String[] args) {
-        printBanner("OOPS");
+        render("OOPS");
     }
 
-    private static void printBanner(String text) {
-        for (int i = 0; i < 5; i++) {
-            StringBuilder line = new StringBuilder();
-            for (char ch : text.toCharArray()) {
-                CharacterPattern cp = map.get(ch);
-                if (cp != null)
-                    line.append(cp.getPattern()[i]).append("  ");
+    public static void render(String word) {
+        word = word.toUpperCase();
+
+        for (int row = 0; row < 5; row++) {
+            for (char ch : word.toCharArray()) {
+                String[] pattern = patterns.get(ch);
+                System.out.print(pattern != null ? pattern[row] + "  " : "     ");
             }
-            System.out.println(line);
-        }
-    }
-
-    static class CharacterPattern {
-        private String[] pattern;
-
-        CharacterPattern(String[] pattern) {
-            this.pattern = pattern;
-        }
-
-        String[] getPattern() {
-            return pattern;
+            System.out.println();
         }
     }
 }
