@@ -1,47 +1,58 @@
-public class OOPSBannerApp {
+public class BannerApp {
 
-    // Static method to generate letter O
-    public static String[] getO() {
-        return new String[] {
-            "  OOOOO  ",
-            " O     O ",
-            " O     O ",
-            " O     O ",
-            "  OOOOO  "
-        };
-    }
+    private static final Map<Character, CharacterPattern> map = new HashMap<>();
 
-    // Static method to generate letter P
-    public static String[] getP() {
-        return new String[] {
-            " PPPPP   ",
-            " P    P  ",
-            " PPPPP   ",
-            " P       ",
-            " P       "
-        };
-    }
+    static {
+        map.put('O', new CharacterPattern(new String[]{
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
+        }));
 
-    // Static method to generate letter S
-    public static String[] getS() {
-        return new String[] {
-            "  SSSSS  ",
-            " S       ",
-            "  SSSSS  ",
-            "      S  ",
-            " SSSSS   "
-        };
+        map.put('P', new CharacterPattern(new String[]{
+                "**** ",
+                "*   *",
+                "**** ",
+                "*    ",
+                "*    "
+        }));
+
+        map.put('S', new CharacterPattern(new String[]{
+                " ****",
+                "*    ",
+                " *** ",
+                "    *",
+                "**** "
+        }));
     }
 
     public static void main(String[] args) {
+        printBanner("OOPS");
+    }
 
-        String[] o = getO();
-        String[] p = getP();
-        String[] s = getS();
+    private static void printBanner(String text) {
+        for (int i = 0; i < 5; i++) {
+            StringBuilder line = new StringBuilder();
+            for (char ch : text.toCharArray()) {
+                CharacterPattern cp = map.get(ch);
+                if (cp != null)
+                    line.append(cp.getPattern()[i]).append("  ");
+            }
+            System.out.println(line);
+        }
+    }
 
-        // Loop-based rendering
-        for (int i = 0; i < o.length; i++) {
-            System.out.println(o[i] + "  " + p[i] + "  " + s[i]);
+    static class CharacterPattern {
+        private String[] pattern;
+
+        CharacterPattern(String[] pattern) {
+            this.pattern = pattern;
+        }
+
+        String[] getPattern() {
+            return pattern;
         }
     }
 }
